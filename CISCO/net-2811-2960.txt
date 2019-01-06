@@ -1,0 +1,16 @@
+Router>enable
+Router#config terminal
+Router(config)#hostname R1
+R1(config)#interface FastEthernet 0/0
+R1(config-if)#ip address 192.168.1.1 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#exit
+R1(config)#interface FastEthernet 0/1
+R1(config-if)#ip address 192.168.1.129 255.255.255.0
+R1(config-if)#no shutdown
+R1(config-if)#exit
+
+not sure about this:
+
+R1(config)#ip route 192.168.1.1 255.255.255.128 192.168.1.129
+R1(config)#ip route 192.168.1.129 255.255.255.128 192.168.1.1
